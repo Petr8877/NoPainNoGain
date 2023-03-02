@@ -1,12 +1,11 @@
 package finalProject.NoPainNoGain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import finalProject.NoPainNoGain.usersEnum.RoleUser;
 import finalProject.NoPainNoGain.usersEnum.Status;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Entity
@@ -16,15 +15,17 @@ public class UserEntity {
     @Id
     private UUID uuid;
 
+//    @JsonProperty("dt_create")
+    private LocalDateTime dtCreate;
+
+//    @JsonProperty("dt_update")
+    private LocalDateTime dtUpdate;
     private String mail;
 
     private String fio;
 
+    @JsonIgnore
     private String password;
-
-    private LocalDateTime dtCreate;
-
-    private LocalDateTime dtUpdate;
 
     @Enumerated(EnumType.STRING)
     private RoleUser role;
@@ -66,8 +67,8 @@ public class UserEntity {
         return dtCreate;
     }
 
-    public long getDtUpdate() {
-        return ZonedDateTime.of(dtUpdate, ZoneId.systemDefault()).toInstant().toEpochMilli();
+    public LocalDateTime getDtUpdate() {
+        return dtUpdate;
     }
 
     public RoleUser getRole() {

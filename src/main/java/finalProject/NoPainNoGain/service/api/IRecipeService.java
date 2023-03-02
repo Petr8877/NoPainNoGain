@@ -1,16 +1,17 @@
 package finalProject.NoPainNoGain.service.api;
 
-import finalProject.NoPainNoGain.core.dto.PageDTO;
-import finalProject.NoPainNoGain.core.dto.nutrition.RecipeDTO;
-import finalProject.NoPainNoGain.core.dto.nutrition.SaveRecipeDTO;
+import finalProject.NoPainNoGain.core.dto.PageDto;
+import finalProject.NoPainNoGain.core.dto.nutrition.RecipeDto;
+import finalProject.NoPainNoGain.core.dto.nutrition.SaveRecipeDto;
+import org.springframework.data.domain.Pageable;
 
 import java.util.UUID;
 
 public interface IRecipeService {
 
-    void createRecipe(RecipeDTO recipeDTO);
+    void createRecipe(RecipeDto recipeDTO);
 
-    PageDTO<SaveRecipeDTO> getRecipePage(Integer page, int size);
+    PageDto<SaveRecipeDto> getRecipePage(Pageable pageable);
 
-    void updateRecipe(UUID uuid, long dtUpdate, RecipeDTO recipeDTO);
+    void updateRecipe(UUID uuid, long dtUpdate, RecipeDto recipeDTO);
 }

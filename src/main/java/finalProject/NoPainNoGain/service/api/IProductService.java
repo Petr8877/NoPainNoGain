@@ -1,16 +1,17 @@
 package finalProject.NoPainNoGain.service.api;
 
-import finalProject.NoPainNoGain.core.dto.PageDTO;
-import finalProject.NoPainNoGain.core.dto.nutrition.ProductDTO;
-import finalProject.NoPainNoGain.core.dto.nutrition.SaveProductDTO;
+import finalProject.NoPainNoGain.core.dto.PageDto;
+import finalProject.NoPainNoGain.core.dto.nutrition.ProductDto;
+import finalProject.NoPainNoGain.core.dto.nutrition.SaveProductDto;
+import org.springframework.data.domain.Pageable;
 
 import java.util.UUID;
 
 public interface IProductService {
 
-    void addProduct(ProductDTO productDTO);
+    void addProduct(ProductDto productDTO);
 
-    void updateProduct(UUID uuid, long dtUpdate, ProductDTO productDTO);
+    void updateProduct(UUID uuid, long dtUpdate, ProductDto productDTO);
 
-    PageDTO<SaveProductDTO> getProductPage(Integer page, int size);
+    PageDto<SaveProductDto> getProductPage(Pageable pageable);
 }

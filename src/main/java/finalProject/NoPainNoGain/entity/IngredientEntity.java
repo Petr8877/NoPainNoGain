@@ -19,9 +19,9 @@ public class IngredientEntity {
     @Transient
     private ProductEntity productEntity;
 
-    private short weight;
+    private int weight;
 
-    private short calories;
+    private int calories;
 
     private double proteins;
 
@@ -38,7 +38,7 @@ public class IngredientEntity {
     public IngredientEntity() {
     }
 
-    public IngredientEntity(UUID uuid, UUID product, short weight, short calories, double proteins,
+    public IngredientEntity(UUID uuid, UUID product, int weight, int calories, double proteins,
                             double fats, double carbohydrates, UUID recipe) {
         this.uuid = uuid;
         this.product = product;
@@ -74,19 +74,19 @@ public class IngredientEntity {
         this.product = product;
     }
 
-    public short getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(short weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public short getCalories() {
+    public int getCalories() {
         return calories;
     }
 
-    public void setCalories(short calories) {
+    public void setCalories(int calories) {
         this.calories = calories;
     }
 

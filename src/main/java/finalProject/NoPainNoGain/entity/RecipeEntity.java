@@ -3,8 +3,6 @@ package finalProject.NoPainNoGain.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Entity
@@ -25,10 +23,10 @@ public class RecipeEntity {
     private String title;
 
     @Column(name = "weight")
-    private short weight;
+    private int weight;
 
     @Column(name = "calories")
-    private short calories;
+    private int calories;
 
     @Column(name = "proteins")
     private double proteins;
@@ -43,7 +41,7 @@ public class RecipeEntity {
     }
 
     public RecipeEntity(UUID uuid, LocalDateTime dtCreate, LocalDateTime dtUpdate, String title,
-                        short weight, short calories, double proteins, double fats, double carbohydrates) {
+                        int weight, int calories, double proteins, double fats, double carbohydrates) {
         this.uuid = uuid;
         this.dtCreate = dtCreate;
         this.dtUpdate = dtUpdate;
@@ -71,12 +69,8 @@ public class RecipeEntity {
         this.dtCreate = dtCreate;
     }
 
-    public LocalDateTime getDtUpdateTime() {
+    public LocalDateTime getDtUpdate() {
         return dtUpdate;
-    }
-
-    public long getDtUpdate() {
-        return ZonedDateTime.of(dtUpdate, ZoneId.systemDefault()).toInstant().toEpochMilli();
     }
 
     public void setDtUpdate(LocalDateTime dtUpdate) {
@@ -91,19 +85,19 @@ public class RecipeEntity {
         this.title = title;
     }
 
-    public short getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(short weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public short getCalories() {
+    public int getCalories() {
         return calories;
     }
 
-    public void setCalories(short calories) {
+    public void setCalories(int calories) {
         this.calories = calories;
     }
 

@@ -36,20 +36,3 @@ public class MailSender {
         return message;
     }
 }
-/*
-mail.smtp.host=smtp.mail.ru
-mail.smtp.port=465
-mail.user.name=ivanivanov2023_18@mail.ru
-mail.user.password=CzgX7LYBBE0GfaQPrZL6
-mail.smtp.socketFactory.port=465
-mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
-mail.smtp.auth=true
- */
-
-//        mail.host=smtp.mail.ru
-//                mail.port=465
-//                mail.username=uhb0f84h@mail.ru
-//mail.password=dhg9j49h0gnj904h
-//        mail.from=uhb0f84h@mail.ru
-//mail.protocol=smtps
-//        mail.smtps.auth=true

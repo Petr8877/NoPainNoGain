@@ -4,10 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import org.springframework.data.annotation.Version;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Entity
@@ -21,6 +20,7 @@ public class ProductEntity {
     @Column(name = "dt_create")
     private LocalDateTime dtCreate;
 
+    @Version
     @Column(name = "dt_update")
     private LocalDateTime dtUpdate;
 
@@ -28,10 +28,10 @@ public class ProductEntity {
     private String title;
 
     @Column(name = "weight")
-    private short weight;
+    private int weight;
 
     @Column(name = "calories")
-    private short calories;
+    private int calories;
 
     @Column(name = "proteins")
     private double proteins;
@@ -45,8 +45,8 @@ public class ProductEntity {
     public ProductEntity() {
     }
 
-    public ProductEntity(UUID uuid, LocalDateTime dtCreate, LocalDateTime dtUpdate, String title, short weight,
-                         short calories, double proteins, double fats, double carbohydrates) {
+    public ProductEntity(UUID uuid, LocalDateTime dtCreate, LocalDateTime dtUpdate, String title, int weight,
+                         int calories, double proteins, double fats, double carbohydrates) {
         this.uuid = uuid;
         this.dtCreate = dtCreate;
         this.dtUpdate = dtUpdate;
@@ -74,8 +74,8 @@ public class ProductEntity {
         this.dtCreate = dtCreate;
     }
 
-    public long getDtUpdate() {
-        return ZonedDateTime.of(dtUpdate, ZoneId.systemDefault()).toInstant().toEpochMilli();
+    public LocalDateTime getDtUpdate() {
+        return dtUpdate;
     }
 
     public void setDtUpdate(LocalDateTime dtUpdate) {
@@ -90,19 +90,19 @@ public class ProductEntity {
         this.title = title;
     }
 
-    public short getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(short weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public short getCalories() {
+    public int getCalories() {
         return calories;
     }
 
-    public void setCalories(short calories) {
+    public void setCalories(int calories) {
         this.calories = calories;
     }
 

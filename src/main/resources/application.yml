@@ -4,22 +4,3 @@ spring:
     url: jdbc:postgresql://localhost:5434/fitness
     username: postgres
     password: kasper
-#  mail:
-#    host: mail.ru
-#    port: 587
-#    username: ivanivanov2023_18@mail.ru
-#    password: CzgX7LYBBE0GfaQPrZL6
-#    test-connection: true
-#       properties:
-#         mail:
-#           smtp:
-#             auth: true
-
-
-#    mail.smtp.host=smtp.mail.ru
-#    mail.smtp.port=465
-#    mail.user.name=ivanivanov2023_18@mail.ru
-#    mail.user.password=CzgX7LYBBE0GfaQPrZL6
-#    mail.smtp.socketFactory.port=465
-#    mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
-#    mail.smtp.auth=true

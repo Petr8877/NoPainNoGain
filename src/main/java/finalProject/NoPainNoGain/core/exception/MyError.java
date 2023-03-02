@@ -1,5 +1,5 @@
 package finalProject.NoPainNoGain.core.exception;
 
-public record MyError(String message, String field) {
+public record MyError(String field, String message) {
 
 }
